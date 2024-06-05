@@ -1,6 +1,7 @@
 ## File: vSerial.py
 ## Auth: Vescent Technologies, Inc.
 ## Date: 2024-06-05
+## Version: 1.0
 ## 
 ## Desc: A library for quick development of excellently-implemented 
 ##       SLICE Serial Control scripts.
