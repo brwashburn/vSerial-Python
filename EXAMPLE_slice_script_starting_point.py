@@ -26,8 +26,6 @@ print("\nConnected.  Querying...")
 reply = dev.query("*IDN?")
 
 print("Response: " + reply)
-#print(reply)
-
 
 
 #======START OF USER CODE=======#

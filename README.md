@@ -1,8 +1,11 @@
 # vSerial-Python
-Vescent's official serial wrapper for interfacing with Vescent products via Python, with usage examples.
+A serial wrapper for interfacing with Vescent products via Python, with usage examples.
 
 ## About
-*vSerial* is a fast, cross platform, general purpose Python library that implements the basic functions needed to begin programmatically interfacing with Vescent SLICE and FFC products.
+*vSerial* is a fast, cross platform, general purpose Python library that implements the basic functions needed to begin programmatically interfacing with Vescent products.
+
+## Regarding Support
+**_vSerial_ is distributed in the hope that it will be useful, but is not an officially-released Vescent product.  Technical support for this library will not be provided, and no guarantee of functionality is made.  See the License section below.**
 
 ## Installation and Usage
 1. Download vSerial.py and place it in your Python project folder.
@@ -29,9 +32,6 @@ pip install pyserial
 Thanks to pySerial's cross-platform compatibility, vSerial should work on Windows, OSX, Linux, and BSD systems (although we've only tested it on Windows and Linux).
 
 **Note:** While *vSerial* itself is written to be OS-agnostic, some of the examples may contain Windows-specific code, such as utilizing COM ports instead of generic Serial port handles.
-
-## Regarding Support
-*vSerial* is distributed in the hope that it will be useful, but is not an officially-released Vescent product.  Technical support for this library will not be provided, and no guarantee of functionality is made.  See the License section below.
 
 ## License
 MIT License
