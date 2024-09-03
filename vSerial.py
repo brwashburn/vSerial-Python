@@ -36,6 +36,7 @@
 import signal
 import serial
 import time
+import sys
 
 termchars = '\r\n'
 debug = False
