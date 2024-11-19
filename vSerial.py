@@ -63,6 +63,33 @@ class vCommHandler():
             pass
         return
 
+    def reopen(self):
+        success = False
+        tries = 0
+        while not success:
+            tries = tries + 1
+            if tries >= 25:
+                return
+            try:
+                self.ser.close()
+            except:
+                pass
+            try:
+                time.sleep(1.5)
+                subprocess.run("echo '2-1' | sudo tee /sys/bus/usb/drivers/usb/unbind",stdout=DEVNULL, stderr=DEVNULL, shell=True)
+                subprocess.run("echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind",stdout=DEVNULL, stderr=DEVNULL, shell=True)
+                time.sleep(0.5)
+                subprocess.run("echo '2-1' | sudo tee /sys/bus/usb/drivers/usb/bind",stdout=DEVNULL, stderr=DEVNULL, shell=True)
+                subprocess.run("echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind",stdout=DEVNULL, stderr=DEVNULL, shell=True)
+                time.sleep(2.5)
+                self.ser = serial.Serial(self.port, baudrate=115200, rtscts=True, dsrdtr=True, xonxoff=True, timeout=0.005, bytesize=8)
+                success = True
+            except Exception as e:
+                print(e)
+                print("trying again...")
+                success = False
+
+
     def query(self, command):
         s = signal.signal(signal.SIGINT, signal.SIG_IGN)
         global debug
